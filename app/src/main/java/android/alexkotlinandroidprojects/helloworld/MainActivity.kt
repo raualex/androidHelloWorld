@@ -1,10 +1,13 @@
 package android.alexkotlinandroidprojects.helloworld
 
 import android.os.Bundle
+import android.util.Log
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.Toast
 
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -24,6 +27,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.menu_main, menu)
+
+        Toast.makeText(this, "Can you see me?",
+            Toast.LENGTH_SHORT).show()
+
+        Log.i("info", "Done creating the app")
+
         return true
     }
 
@@ -36,4 +45,19 @@ class MainActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
+
+    fun topClick(v: View) {
+        Toast.makeText(this, "Top button clicked",
+            Toast.LENGTH_SHORT).show()
+
+        Log.i("info", "The user clicked the top button")
+    }
+
+    fun bottomClick(v: View) {
+        Toast.makeText(this, "Bottom button clicked",
+            Toast.LENGTH_SHORT).show()
+
+        Log.i("info", "The user clicked the bottom button")
+    }
+
 }
